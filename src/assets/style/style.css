@@ -41,7 +41,7 @@ body {
     background-color: var(--off-black);
     color: var(--off-white);
     height: 100vh;
-    text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.568);
+    /* text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.568); */
 }
 
 /* MAIN STYLING */
@@ -86,11 +86,15 @@ button:focus {
 }
 header {
     background-color: var(--blue);
-    display: flex;
-    justify-content: space-between;
+    display: flex;  flex-direction: column;
+    justify-content: center;
     width: 100%;
     padding: 15px calc((100vw - 1150px) / 2);
 
+}
+.row {
+    display: flex;
+    justify-content: space-between;
 }
 footer {
     position: relative;
@@ -177,6 +181,7 @@ input:focus {
     line-height: 1;
     text-shadow: 2px 3px 3px var(--off-black);
     color: var(--off-white);
+    background-color: var(--blue);
     border-top-left-radius: 8px;
     text-decoration: underline;
     text-decoration-thickness: 3px;
@@ -193,6 +198,10 @@ input:focus {
 }
 .init-form {
     width: 80%;
+    
+}
+label {
+    font-family: 'Poppins';
 }
 input {
     width: 100%;
@@ -239,7 +248,20 @@ input {
     background: rgba(255, 255, 255, 0);
     background: linear-gradient(270deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.4234068627450981) 50%, rgba(255,255,255,0) 100%);
 }
-
+.tab-enter {
+    opacity: 0;
+  }
+  .tab-enter-active {
+    opacity: 1;
+    transition: opacity 200ms;
+  }
+  .tab-exit {
+    opacity: 1;
+  }
+  .tab-exit-active {
+    opacity: 0;
+    transition: opacity 200ms;
+  }
 .banner-side {
     display: flex;
     justify-content: center;
@@ -325,6 +347,7 @@ header h1 {
     text-underline-offset: 12px;
     text-decoration-thickness: 2px;
     text-decoration-color: var(--off-white);
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.377);
 }
 header h4 {
     margin-top: -3px;

@@ -14,6 +14,7 @@ import { render } from '@testing-library/react';
 export default function App() {
   const [page, changePage] = useState("Init");
 
+
   const renderPage = () => {
     switch(page) {
       case "Init":
@@ -21,7 +22,7 @@ export default function App() {
       case "Home":
         return <Home handlePageChange={handlePageChange} />;
       default:
-        return <Home />
+        return <Home handlePageChange={handlePageChange} />
     }
   }
 
