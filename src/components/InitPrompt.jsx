@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Banner from "../assets/banner.jpg";
 
-export default function InitPrompt() {
-    const [formState, setFormState] = useState({ teamname: '', username: '' });
+export default function InitPrompt({ handlePageChange }) {
+    const [formState, setFormState] = useState({ teamname: '', leadname: '' });
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -16,30 +16,52 @@ export default function InitPrompt() {
     const handleFormSubmit = (event) => {
         event.preventDefault();
         console.log(formState);
-    
 
-    
+        const name = formState.teamname;
+        const manager_name = formState.leadname;
+
+        if(name && manager_name) {
+            localStorage.setItem("teamName", name);
+            localStorage.setItem("managerName", manager_name);
+            console.log(localStorage.getItem("teamName"));
+            console.log(localStorage.getItem("managerName"));
+        }
+        else if(!name || !manager_name) {
+            localStorage.setItem("teamName", "The Seattle Puddlechickens");
+            localStorage.setItem("managerName", "Qweet Farrol");
+            console.log(localStorage.getItem("teamName"));
+            console.log(localStorage.getItem("managerName"));
+        }
+
         setFormState({
-            username: '',
-            password: '',
+          teamname: '',
+          leadname: '',
         });
+
+        handlePageChange("Home");
     };
     
+    useEffect(() => {
+        if(localStorage.getItem("teamName")) {
+            handlePageChange("Home");
+        }
+    })
+
     return (
         <>
             <div className="container init-container">
                 <div className="form-side">
                     <h1>Welcome!</h1>
-                    <h6>Enter your team and manager's name:</h6>
+                    <h6>Enter team information to continue:</h6>
                     <form className='init-form' onSubmit={handleFormSubmit}>
                         <div className='init-input'>
                             <div class='field'>
-                                <label class='label'>Team</label>
+                                <label class='label'>Team Name</label>
                                 <div class='control'>
                                     <input
                                         class='input'
                                         type='teamname'
-                                        placeholder="Your team's name"
+                                        placeholder="Your team or company's name"
                                         name='teamname'
                                         value={formState.teamname}
                                         onChange={handleChange}
@@ -48,14 +70,14 @@ export default function InitPrompt() {
                             </div>
 
                             <div class='field'>
-                                <label class='label'>Team Manager's Name</label>
+                                <label class='label'>Team Lead's Name</label>
                                 <div class='control'>
                                     <input
                                         class='input'
-                                        type='username'
-                                        name='username'
+                                        type='leadname'
+                                        name='leadname'
                                         placeholder="Your team's manager"
-                                        value={formState.username}
+                                        value={formState.leadname}
                                         onChange={handleChange}
                                     />
                                 </div>
@@ -69,16 +91,22 @@ export default function InitPrompt() {
                             </button>
                         <div className="divider"></div>
                             <div className="sub-container d-flex flex-column align-items-center mb-5">
-                                <p className='mt-1 mb-2'>Already generated a team?</p>
+                                <p className='mt-0 mb-1'>Create an account to save team</p>
                                 <a href='#'>
-                                    Saved teams
+                                    Register
                                 </a>
                             </div>
                         </div>
                     </form>
                 </div>
                 <div className="banner-side">
-                    <img src={Banner} alt="banner" className='banner' />
+                  <div className="brand">
+                  
+                    <h1>Team<span className='ez'>EZ</span><i class="fa-solid fa-chalkboard-user brand-icon"></i></h1>
+                    
+                    <h5>Team Management</h5>
+                  </div>
+                  <div className="banner"></div>
                 </div>
             </div>
         </>
