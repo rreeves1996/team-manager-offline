@@ -12,7 +12,13 @@ import { render } from '@testing-library/react';
 
 
 export default function App() {
-  const [page, changePage] = useState("Init");
+  const [page, changePage] = useState(() => {
+    if(localStorage.getItem("teamName")){
+      return "Home";
+    } else {
+      return "Init";
+    }
+  });
 
 
   const renderPage = () => {

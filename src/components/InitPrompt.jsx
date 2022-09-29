@@ -41,12 +41,6 @@ export default function InitPrompt({ handlePageChange }) {
         handlePageChange("Home");
     };
     
-    useEffect(() => {
-        if(localStorage.getItem("teamName")) {
-            handlePageChange("Home");
-        }
-    })
-
     return (
         <>
             <div className="container init-container">

@@ -10,13 +10,13 @@ export default function InitPrompt({ handlePageChange }) {
 
     const teamName = localStorage.getItem("teamName");
     const managerName = localStorage.getItem("managerName");
-    const nodeRef = useRef(null);
+    // const nodeRef = useRef(null);
 
     const renderTab = () => {
         if(currentTab === "Home") {
-            return <HomeTab  handleTabChange={handleTabChange} nodeRef={nodeRef}/>;
+            return <HomeTab  handleTabChange={handleTabChange}/>;
         } else if (currentTab === "Manage") {
-            return <ManageTab  handleTabChange={handleTabChange} nodeRef={nodeRef}/>;
+            return <ManageTab  handleTabChange={handleTabChange}/>;
         }
     };  
     const deleteTeam = () => {
@@ -43,23 +43,22 @@ export default function InitPrompt({ handlePageChange }) {
                             <li onClick={() => deleteTeam()} id="delete-team">Delete team</li>
                         </ul>
                     </div>
-                    </div>
-                <div className="tab-container">
-                    <button onClick={() => {
+                </div>
+            </header>
+            <div className="tab-container">
+                    <button className="tab-button" onClick={() => {
                         handleTabChange("Home");
                         setInProp(true)
                     }}>Home</button>
-                    <button onClick={() => {
+                    <button className="tab-button" onClick={() => {
                         handleTabChange("Manage");
                         setInProp(true)
                     }}>Manage</button>
-                </div>
-            </header>
-
+            </div>
             <div className="home-container">
-                <CSSTransition nodeRef={nodeRef} in={inProp} timeout={200} classNames="tab">
+                {/* <CSSTransition nodeRef={nodeRef} in={inProp} timeout={200} classNames="tab"> */}
                     {renderTab()}
-                </CSSTransition>
+                {/* </CSSTransition> */}
                 
             </div>
         </>

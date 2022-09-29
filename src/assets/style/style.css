@@ -40,8 +40,7 @@ body {
     font-family: 'Montserrat';
     background-color: var(--off-black);
     color: var(--off-white);
-    height: 100vh;
-    /* text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.568); */
+    overflow-x: hidden;
 }
 
 /* MAIN STYLING */
@@ -61,7 +60,7 @@ main {
     align-items: center;
     flex-direction: column;
     width: 100vw;
-    height: calc(100vh - 130px);
+
 }
 button {
     border: none;
@@ -89,12 +88,26 @@ header {
     display: flex;  flex-direction: column;
     justify-content: center;
     width: 100%;
-    padding: 15px calc((100vw - 1150px) / 2);
+    padding: 5px calc((100vw - 1180px) / 2);
+    padding-bottom: 20px;
 
 }
-.row {
-    display: flex;
-    justify-content: space-between;
+label {
+    font-family: 'Poppins';
+}
+input {
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid rgb(168, 166, 166);
+    text-indent: 6px;
+    font-size: 90%;
+    height: 33px;
+    margin-bottom: 11px;
+}
+input:focus {
+    outline: none !important;
+
+    box-shadow: 0px 0px 1px 2px #7693b8cb !important;
 }
 footer {
     position: relative;
@@ -103,11 +116,14 @@ footer {
     height: 50px;
     width: 100vw;
 }
-input:focus {
-    outline: none !important;
-
-    box-shadow: 0px 0px 1px 2px #7693b8cb !important;
+.row {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin: 0;
 }
+
+
 .navbar-brand, .index-button {
     display: flex;
     justify-content: center;
@@ -200,18 +216,7 @@ input:focus {
     width: 80%;
     
 }
-label {
-    font-family: 'Poppins';
-}
-input {
-    width: 100%;
-    border-radius: 3px;
-    border: 1px solid rgb(168, 166, 166);
-    text-indent: 6px;
-    font-size: 90%;
-    height: 33px;
-    margin-bottom: 11px;
-}
+
 .label {
     margin-top: 8px !important;
     margin-bottom: 8px !important;
@@ -242,13 +247,11 @@ input {
 }
 .divider {
     width: 100%;
-    margin-top: 8px;
-    margin-bottom: 20px;
     height: 1px;
     background: rgba(255, 255, 255, 0);
     background: linear-gradient(270deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.4234068627450981) 50%, rgba(255,255,255,0) 100%);
 }
-.tab-enter {
+/* .tab-enter {
     opacity: 0;
   }
   .tab-enter-active {
@@ -261,7 +264,7 @@ input {
   .tab-exit-active {
     opacity: 0;
     transition: opacity 200ms;
-  }
+  } */
 .banner-side {
     display: flex;
     justify-content: center;
@@ -349,10 +352,7 @@ header h1 {
     text-decoration-color: var(--off-white);
     text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.377);
 }
-header h4 {
-    margin-top: -3px;
-    
-}
+
 header i {
 
     color: var(--blue-light);
@@ -386,6 +386,9 @@ header i:active {
     line-height: 1;
     margin: 20px 0 10px 0;
 }
+.header-text h4 {
+    margin-bottom: 0;
+}
 .team-menu {
     position: absolute;
     transform: translate(-91%, 3px);
@@ -418,15 +421,105 @@ header i:active {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
-
+.tab-button {
+    height: 45px;
+    padding: 0 15px;
+    margin-right: 5px;
+    background-color: transparent;
+    transition: background-color 100ms;
+}
+.tab-button:hover {
+    background-color: rgba(255, 255, 255, 0.048);
+}
+.tab-container {
+    width: 100% !important;
+    padding: 10px calc((100vw - 1180px) / 2);
+    background-color:#16223175;
+}
 .home-container {
     display: flex;
     width: 1190px; 
-    padding: 0px;
-    
+    padding: 16px 0px;
+    justify-content: space-between;
+    height: 100%;
+    /* min-height: 750px; */
 }
 .fa-user {
     color: var(--off-white);
     font-size: 2rem;
     margin-right: 5px;
+}
+.quick-add, .your-team, .welcome {
+    background-color: rgb(231, 227, 227);
+
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    color: var(--off-black);
+}
+
+
+.col-home {
+    display: flex;
+    flex-direction: column;
+    width: calc(35% - 16px);
+    min-height: calc(100% - 0px) !important;
+}
+.welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.your-team {
+    width: 65%;
+}
+.quick-add h2, .your-team h2, .welcome h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding: 10px 0;
+    background-color: var(--blue);
+    color: var(--off-white);
+    text-shadow: 1px 1px 2px black;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-size: 3.5em;
+    letter-spacing: 1px;
+    width: 100%;
+}
+.welcome h6 {
+    font-size: 1.05em;
+}
+.welcome h5 {
+
+    font-size: 1.2em;
+
+}
+.divider {
+    width: 65%;
+}
+.card-body {
+    
+    padding: 25px 0;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card-body p {
+    font-size: 1em;
+    line-height: 1.25;
+    margin: 5px 0;
+}
+.more-stats {
+    font-size: .75em;
+    cursor: pointer;
+    margin-left: 3px;
+}
+.welcome-header {
+    text-align: center;
+    margin: 15px 0px;
 }
