@@ -42,68 +42,67 @@ export default function InitPrompt({ handlePageChange }) {
     };
     
     return (
-        <>
-            <div className="container init-container">
-                <div className="form-side">
-                    <h1>Welcome!</h1>
-                    <h6>Enter team information to continue:</h6>
-                    <form className='init-form' onSubmit={handleFormSubmit}>
-                        <div className='init-input'>
-                            <div class='field'>
-                                <label class='label'>Team Name</label>
-                                <div class='control'>
-                                    <input
-                                        class='input'
-                                        type='teamname'
-                                        placeholder="Your team or company's name"
-                                        name='teamname'
-                                        value={formState.teamname}
-                                        onChange={handleChange}
-                                    />
-                                </div>
-                            </div>
-
-                            <div class='field'>
-                                <label class='label'>Team Lead's Name</label>
-                                <div class='control'>
-                                    <input
-                                        class='input'
-                                        type='leadname'
-                                        name='leadname'
-                                        placeholder="Your team's manager"
-                                        value={formState.leadname}
-                                        onChange={handleChange}
-                                    />
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div className='init-button-container'>
-                            <button className='init-button' type='submit'>
-                                Generate Team
-                            </button>
-                        <div className="divider"></div>
-                            <div className="sub-container d-flex flex-column align-items-center mb-5">
-                                <p className='mt-0 mb-1'>Create an account to save team</p>
-                                <a href='#'>
-                                    Register
-                                </a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div className="banner-side">
-                  <div className="brand">
-                  
-                    <h1>Team<span className='ez'>EZ</span><i className="fa-solid fa-chalkboard-user brand-icon"></i></h1>
-                    
-                    <h5>Team Management</h5>
+      <>
+        <div className='container init-container'>
+          <div className='form-side'>
+            <h1>Welcome!</h1>
+            <h6>Enter team information to continue:</h6>
+            <form className='init-form' onSubmit={handleFormSubmit}>
+              <div className='init-input'>
+                <div classname='field'>
+                  <label classname='label'>Team Name</label>
+                  <div classname='control'>
+                    <input
+                      classname='input'
+                      type='teamname'
+                      placeholder="Your team or company's name"
+                      name='teamname'
+                      value={formState.teamname}
+                      onChange={handleChange}
+                    />
                   </div>
-                  <div className="banner"></div>
                 </div>
+
+                <div classname='field'>
+                  <label classname='label'>Team Lead's Name</label>
+                  <div classname='control'>
+                    <input
+                      classname='input'
+                      type='leadname'
+                      name='leadname'
+                      placeholder="Your team's manager"
+                      value={formState.leadname}
+                      onChange={handleChange}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className='init-button-container'>
+                <button className='init-button' type='submit'>
+                  Generate Team
+                </button>
+                <div className='divider'></div>
+                <div className='sub-container d-flex flex-column align-items-center mb-5'>
+                  <p className='mt-0 mb-1'>Create an account to save team</p>
+                  <a href='#'>Register</a>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div className='banner-side'>
+            <div className='brand'>
+              <h1>
+                Team<span className='ez'>EZ</span>
+                <i className='fa-solid fa-chalkboard-user brand-icon'></i>
+              </h1>
+
+              <h5>Team Management</h5>
             </div>
-        </>
+            <div className='banner'></div>
+          </div>
+        </div>
+      </>
     );
 }
 
