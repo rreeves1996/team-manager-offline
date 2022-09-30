@@ -33,10 +33,10 @@ export default function InitPrompt({ handlePageChange }) {
                 <div className="row">
                     <div className="header-text">
                         <h1>{teamName}</h1>
-                        <h4><i class="fa-solid fa-user"></i> Manager: <strong>{managerName}</strong></h4>
+                        <h4><i className="fa-solid fa-user"></i> Manager: <strong>{managerName}</strong></h4>
                     </div>
                     <div className={collapsedMenu ? "menu-button" : "menu-button open"} >
-                        <i class="fa-solid fa-pen-to-square"onClick={() => toggleCollapseMenu(!collapsedMenu)}></i>
+                        <i className="fa-solid fa-pen-to-square"onClick={() => toggleCollapseMenu(!collapsedMenu)}></i>
                         <ul className={!collapsedMenu ? "team-menu" : "team-menu collapse"}>
                             <li id="edit-name">Edit team name</li>
                             <li id="edit-manager">Edit manager</li>

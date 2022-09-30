@@ -96,7 +96,7 @@ export default function InitPrompt({ handlePageChange }) {
                 <div className="banner-side">
                   <div className="brand">
                   
-                    <h1>Team<span className='ez'>EZ</span><i class="fa-solid fa-chalkboard-user brand-icon"></i></h1>
+                    <h1>Team<span className='ez'>EZ</span><i className="fa-solid fa-chalkboard-user brand-icon"></i></h1>
                     
                     <h5>Team Management</h5>
                   </div>

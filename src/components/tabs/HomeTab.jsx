@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import EmpCard from '../cards/EmpCard';
 
 export default function HomeTab({ nodeRef }) {
   const [roles, addRole] = useState([]);
-
+  const [managers, addManager] = useState([]);
 
   const employeeCount = 5;
   const managerCount = 2;
@@ -21,8 +22,26 @@ export default function HomeTab({ nodeRef }) {
     roleSalary: "5",
     empCount: 1
   }
+  const manager1 = {
+    teamName: `${localStorage.getItem("teamName")}`,
+    name: `${localStorage.getItem("managerName")}`,
+    lead: true,
+    number:"(425) 422-3459",
+    email:"queefin.qweet@seahawks.net",
+    timeZone: 7
+  }
+  const manager2 = {
+    teamName: `${localStorage.getItem("teamName")}`,
+    name: `Kid Rock's Cousin`,
+    lead: undefined,
+    number:"(425) 993-2304",
+    email:"walmart.krock@seahawks.net",
+    timeZone: 7
+  }
 
   const handleAddRoles = (newRole) => addRole(roles => [...roles, newRole]);
+  const handleAddManagers = (newManager) => addManager(managers => [...managers, newManager]);
+
   const addAllRoles = () => {
     handleAddRoles(role1);
     handleAddRoles(role2);
@@ -30,6 +49,12 @@ export default function HomeTab({ nodeRef }) {
     console.log(roles);
   }
   
+  const addAllManagers = () => {
+    handleAddManagers(manager1);
+    handleAddManagers(manager2);
+    console.log(managers);
+  }
+
   console.log(roles);
   const origDate = new Date().toDateString();
   const dateArray = origDate.split(" ");
@@ -124,6 +149,7 @@ export default function HomeTab({ nodeRef }) {
 
   useEffect(() => {
     addAllRoles();
+    addAllManagers();
   }, [])
 
   return (
@@ -142,13 +168,14 @@ export default function HomeTab({ nodeRef }) {
             <div className="section">
               <p><strong>Payroll Total:</strong> </p>
               <p><strong>Avg. Salary:</strong> </p>
-              {roles.forEach((role) => (
-                <>
+              {roles.forEach((role, index) =>{
+                console.log(role.roleName);
+                return (
                   <p>
-                    <strong>Total {role.roleName}s: {role.empCount}</strong>
+                    <strong>{role.roleName}</strong>
                   </p>
-                </>
-              ))}
+
+                )})}
             </div>
             <p>To edit your team name, manager, or delete your team, click the <i className='fa-solid fa-pen-to-square'></i> icon</p>
           </div>
@@ -159,6 +186,18 @@ export default function HomeTab({ nodeRef }) {
       </div>
       <div className="your-team">
         <h2>Your Team</h2>
+        <div className="card-body">
+          <div className="managers">
+            <h5><strong>Managers</strong></h5>
+            <div className="card-container">
+              {managers.forEach(manager => 
+                <>
+                  <EmpCard name={manager.name} lead={manager.lead} number={manager.number} email={manager.email} timeZone={manager.timeZone}/>
+                </>
+              )}
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );

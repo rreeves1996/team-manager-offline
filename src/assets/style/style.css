@@ -472,7 +472,6 @@ header i:active {
     align-items: center;
     margin-bottom: 16px;
 }
-
 .your-team {
     width: 65%;
 }
@@ -493,9 +492,9 @@ header i:active {
 .welcome h6 {
     font-size: 1.05em;
 }
-.welcome h5 {
+h5 {
 
-    font-size: 1.2em;
+    font-size: 1.2em !important;
 
 }
 .divider {
@@ -508,6 +507,7 @@ header i:active {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0 auto;
 }
 .card-body p {
     font-size: 1em;
@@ -522,4 +522,11 @@ header i:active {
 .welcome-header {
     text-align: center;
     margin: 15px 0px;
+}
+.managers {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
