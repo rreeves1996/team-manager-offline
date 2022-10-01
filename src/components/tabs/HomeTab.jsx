@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import EmpCard from '../cards/EmpCard';
 
-export default function HomeTab({ nodeRef }) {
+export default function HomeTab() {
   const [roles, addRole] = useState([]);
   const [managers, addManager] = useState([]);
 
@@ -169,7 +169,7 @@ export default function HomeTab({ nodeRef }) {
             <div className="section">
               <p><strong>Payroll Total: </strong> </p>
               <p><strong>Avg. Salary:</strong> </p>
-              {roles.map((role, index) =>{
+              {roles.map(role => {
                 console.log(role.roleName);
                 return (
                   <p>
@@ -181,7 +181,7 @@ export default function HomeTab({ nodeRef }) {
             <p>To edit your team name, manager, or delete your team, click the <i className='fa-solid fa-pen-to-square'></i> icon</p>
           </div>
         </div>
-        <div className="quick-add" ref={nodeRef}>
+        <div className="quick-add">
           <h2>Quick-Add</h2>
         </div>
       </div>
