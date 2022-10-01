@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function ManageTab({ nodeRef }) {
+export default function ManageTab() {
   return (
     <>
-        <div className="manage" ref={nodeRef}>
+        <div className="manage">
             <h1>Manage</h1>
         </div>
     </>
