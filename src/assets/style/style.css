@@ -2,7 +2,7 @@
     --off-black: #1b1b1b;
     --off-white: #fcfbfd;
     --blue: #324e70;
-    --blue-light: #92aecf;
+    --blue-light: #91b0d4;
     --accent: #cfc6d1;
 }
 
@@ -529,4 +529,7 @@ h5 {
     justify-content: center;
     align-items: center;
     width: 100%;
+}
+.card-container {
+    display: flex;
 }
