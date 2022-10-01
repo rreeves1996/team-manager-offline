@@ -3,22 +3,40 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid rgb(211, 211, 211);
+
     border-radius: 6px;
+    background-color: rgb(231, 227, 227);
     margin: 8px;
     text-shadow: 1px 1px 1px #00000011;
     overflow: hidden;
+    filter: drop-shadow(2px 3px 3px rgba(0, 0, 0, 0.295));
+    
 }
 .emp-card-header {
+    display: flex;
+
+    align-items: center;
     text-align: center;
     background-color:var(--blue);
     color: white;
     width: 100%;
     height: 100%;
-    padding: 8px 0;
 }
-.emp-card .divider {
-    margin: 5px;
+.emp-picture {
+    display: flex;
+    justify-content: center; align-items: center;
+    width: 46px; height: 46px;
+    border: 1px solid var(--off-white);
+    border-radius: 4px;
+    background-color: var(--blue-light);
+    margin: 8px 0px 8px 13px;
+}
+.emp-picture i {
+    margin: 0 auto;
+}
+.emp-info-header {
+    padding: 8px 18px;
+    margin: 0 auto;
 }
 .emp-card-header strong {
     font-family: 'Alumni Sans Pinstripe';
@@ -26,9 +44,12 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     line-height: 1;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    text-decoration-thickness: 1px;
 }
 .emp-card h6 {
-    margin: 0;
+    margin: 4px 0 0 0;
 }
 .emp-contact-info {
     font-size: .8em;

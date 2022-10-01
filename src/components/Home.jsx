@@ -5,13 +5,11 @@ import HomeTab from './tabs/HomeTab';
 import ManageTab from './tabs/ManageTab';
 
 export default function InitPrompt({ handlePageChange }) {
-  const [inProp, setInProp] = useState(false);
   const [collapsedMenu, toggleCollapseMenu] = useState(true);
   const [currentTab, setCurrentTab] = useState('Home');
 
   const teamName = localStorage.getItem('teamName');
   const managerName = localStorage.getItem('managerName');
-  // const nodeRef = useRef(null);
 
   const renderTab = () => {
     if (currentTab === 'Home') {
@@ -58,7 +56,6 @@ export default function InitPrompt({ handlePageChange }) {
           className='tab-button'
           onClick={() => {
             handleTabChange('Home');
-            setInProp(true);
           }}
         >
           Home
@@ -67,16 +64,13 @@ export default function InitPrompt({ handlePageChange }) {
           className='tab-button'
           onClick={() => {
             handleTabChange('Manage');
-            setInProp(true);
           }}
         >
           Manage
         </button>
       </div>
       <div className='home-container'>
-        {/* <CSSTransition nodeRef={nodeRef} in={inProp} timeout={200} classNames="tab"> */}
         {renderTab()}
-        {/* </CSSTransition> */}
       </div>
     </>
   );

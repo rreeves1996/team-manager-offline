@@ -6,8 +6,21 @@ export default function EmpCard(props) {
     <>
         <div className="emp-card">
           <div className="emp-card-header">
-            <h6 className="emp-name"><strong>{props.name}</strong></h6>
-            <h6 className="emp-role">{props.lead ? "Team Lead" : props.role}</h6>
+            <div className="emp-picture">
+              {props.picture ? (
+                <>
+                  <img src={props.picture} alt="" />
+                </>
+              ) : (
+                <>
+                  <i className='fa-solid fa-user'></i>
+                </>
+              )}
+            </div>
+            <div className="emp-info-header">
+              <h6 className="emp-name"><strong>{props.name}</strong></h6>
+              <h6 className="emp-role">{props.lead ? "Team Lead" : props.role}</h6>
+            </div>
           </div>
 
           <div className="emp-contact-info">
