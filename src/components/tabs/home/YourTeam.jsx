@@ -6,7 +6,7 @@ export default function YourTeam(props) {
     return (
         <div className="your-team">
         <h2>Your Team</h2>
-            <div className="card-body">
+            <div className="container-body">
                 <div className="managers">
                     <h5><strong>Managers</strong></h5>
                     <div className="card-container">

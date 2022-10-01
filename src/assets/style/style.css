@@ -112,7 +112,7 @@ input:focus {
 footer {
     position: relative;
     display: flex;
-    justify-content: center;    align-items: center;
+    justify-content: center; align-items: center;
     height: 50px;
     width: 100vw;
 }
@@ -502,26 +502,66 @@ h5 {
 }
 .card-body {
     
-    padding: 25px 0;
+    padding: 13px 0;
     width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
 }
-.card-body p {
+.container-body {
+    padding: 13px 0;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+.card-body, .container-body p {
     font-size: 1em;
     line-height: 1.25;
     margin: 5px 0;
 }
-.more-stats {
+.more-stats-toggler {
     font-size: .75em;
     cursor: pointer;
     margin-left: 3px;
+    user-select: none;
+}
+.more-stats {
+    /* position: absolute; */
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    /* width: 70%; */
+    padding: 8px;
+    border: 1px solid #cfcfcf;
+    background-color: #e4dfdf;
+    border-radius: 2px;
+    margin-top: -8px;
+    margin-bottom: 8px;
+    opacity: 100%;
+    transform: translateY(0%);
+    transition: all 0.5s;
+}
+.more-stats.collapsed {
+    pointer-events: none;
+    margin-bottom: -30px;
+    opacity: 0%;
+    transform: translateY(-10%);
+    transition: all 0.5s;
+}
+.more-stats p {
+    font-size: .8em;
+    margin: 5px;
+    transition: all 0.5s;
+}
+.more-stats.collapsed p {
+    margin-top: -15px;
 }
 .summary-header {
     text-align: center;
-    margin: 15px 0px;
+    margin: 8px 0px;
 }
 .managers {
     display: flex;

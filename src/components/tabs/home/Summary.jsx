@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function Summary(props) {
+    const [collapsed, collapseStats] = useState(true);
+
     const origDate = new Date().toDateString();
     const dateArray = origDate.split(" ");
     const dateNum = dateArray[2].split("");
@@ -104,19 +106,19 @@ export default function Summary(props) {
             <div className="divider"></div>
             <div className="card-body">
                 <p>Your team currently has <strong>{managerCount}</strong> managers 
-                and <strong>{employeeCount}</strong> employees <span className='more-stats'>More stats <i className="fa-solid fa-caret-down"></i></span></p>
-            <div className="section">
-                <p><strong>Payroll Total: </strong> </p>
-                <p><strong>Avg. Salary:</strong> </p>
-                {props.roles.map(role => {
-                console.log(role.roleName);
-                return (
-                    <p>
-                    <strong>Total {role.roleName}s:</strong> {role.empCount}
-                    </p>
+                and <strong>{employeeCount}</strong> employees <span className='more-stats-toggler' onClick={() => collapseStats(prevState => !prevState)}>More stats <i className="fa-solid fa-caret-down"></i></span></p>
+                <div className={collapsed ? 'more-stats collapsed' : 'more-stats'}>
+                    <p><strong>Payroll Total: </strong> </p>
+                    <p><strong>Avg. Salary:</strong> </p>
+                    {props.roles.map(role => {
+                    console.log(role.roleName);
+                    return (
+                        <p>
+                        <strong>Total {role.roleName}s:</strong> {role.empCount}
+                        </p>
 
-                )})}
-            </div>
+                    )})}
+                </div>
                 <p>To edit your team name, manager, or delete your team, click the <i className='fa-solid fa-pen-to-square'></i> icon</p>
             </div>
         </div>
