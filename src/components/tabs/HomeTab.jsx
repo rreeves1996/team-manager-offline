@@ -36,7 +36,7 @@ export default function HomeTab() {
   }
   const manager2 = {
     teamName: `${localStorage.getItem("teamName")}`,
-    name: `Kid Rock's Cousin`,
+    name: `Kid Croc`,
     id: 2,
     lead: undefined,
     role: `Manager`,

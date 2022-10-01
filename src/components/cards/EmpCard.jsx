@@ -22,12 +22,12 @@ export default function EmpCard(props) {
               <h6 className="emp-role">{props.lead ? "Team Lead" : props.role}</h6>
             </div>
           </div>
-
+{/* 
           <div className="emp-contact-info">
-              <p><strong>Phone #:</strong> {props.number}</p>
-              <p><strong>Email:</strong> {props.email}</p>
-              <p><strong>Time:</strong> UTC -{props.timeZone}:00</p>
-          </div>
+              <p><strong>Phone #:</strong>{props.number}</p>
+              <p><strong>Email:</strong>{props.email}</p>
+              <p><strong>Time:</strong>UTC -{props.timeZone}:00</p>
+          </div> */}
         </div>
     </>
   );

@@ -106,7 +106,7 @@ export default function Summary(props) {
             <div className="divider"></div>
             <div className="card-body">
                 <p>Your team currently has <strong>{managerCount}</strong> managers 
-                and <strong>{employeeCount}</strong> employees <span className='more-stats-toggler' onClick={() => collapseStats(prevState => !prevState)}>More stats <i className="fa-solid fa-caret-down"></i></span></p>
+                and <strong>{employeeCount}</strong> employees <span className='more-stats-toggler' onClick={() => collapseStats(prevState => !prevState)}>More stats <i className={collapsed ? "fa-solid fa-caret-down" : "fa-solid fa-caret-down rotated"}></i></span></p>
                 <div className={collapsed ? 'more-stats collapsed' : 'more-stats'}>
                     <p><strong>Payroll Total: </strong> </p>
                     <p><strong>Avg. Salary:</strong> </p>
@@ -119,7 +119,14 @@ export default function Summary(props) {
 
                     )})}
                 </div>
-                <p>To edit your team name, manager, or delete your team, click the <i className='fa-solid fa-pen-to-square'></i> icon</p>
+                <div className="info">
+                    <i className="fa-solid fa-circle-exclamation"></i>
+                    <p>To edit your team name, manager, or delete your team, click the <i className='fa-solid fa-pen-to-square'></i> icon</p>
+                </div>
+                <div className="info">
+                    <i className="fa-solid fa-circle-exclamation"></i>
+                    <p>To add/edit roles or salaries, select the <strong>Manage</strong> tab</p>
+                </div>
             </div>
         </div>
     )

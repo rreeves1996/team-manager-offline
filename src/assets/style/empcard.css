@@ -1,56 +1,71 @@
 .emp-card {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; align-items: center;
+    cursor: pointer;
 
-    border-radius: 6px;
-    background-color: rgb(231, 227, 227);
+    width: 250px;
     margin: 8px;
-    overflow: hidden;
     filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.295));
+    transition: transform 0.2s;
     
+}
+.emp-card:hover {
+    transform: translateY(-2px);
 }
 .emp-card-header {
     display: flex;
-
+    padding: 13px;
     align-items: center;
     text-align: center;
     background-color:var(--blue);
     color: white;
-    width: 100%;
+    border-radius: 6px;
     height: 100%;
 }
 .emp-picture {
     display: flex;
     justify-content: center; align-items: center;
-    width: 46px; height: 46px;
+    width: 80px;
+    height: 80px;
     border: 1px solid var(--off-white);
     border-radius: 4px;
     background-color: var(--blue-light);
-    margin: 8px 0px 8px 13px;
+    margin-right: 13px;
 }
 .emp-picture i {
     margin: 0 auto;
+    font-size: 3em;
 }
 .emp-info-header {
-    padding: 8px 18px;
-    margin: 0 auto;
+    margin: 0 8px;
 }
 .emp-card-header strong {
     font-family: 'Alumni Sans Pinstripe';
-    font-size: 1.8em;
+    font-size: 2.5em;
     text-transform: uppercase;
     letter-spacing: 1px;
     line-height: 1;
     text-decoration: underline;
-    text-underline-offset: 6px;
     text-decoration-thickness: 1px;
+    text-underline-offset: 6px;
+    
 }
 .emp-card h6 {
-    margin: 4px 0 0 0;
+    margin: 0;
+    margin-top: 4px;
+    font-size: .8em;
 }
 .emp-contact-info {
-    font-size: .8em;
-    padding: 8px 13px;
+    font-size: .85em;
+    padding: 8px 13px 3px 13px;
+}
+.emp-contact-info strong {
+    margin-left: -3px !important;
+    margin-bottom: 3px !important;
+}
+.emp-contact-info p {
+    display: flex;
+    flex-direction: column;
+    margin-left: 3px !important;
+    margin-bottom: 8px !important;
 }
