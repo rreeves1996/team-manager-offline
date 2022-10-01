@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-
+import Summary from './home/Summary';
+import QuickAdd from './home/QuickAdd';
 import YourTeam from './home/YourTeam';
 
 export default function HomeTab() {
@@ -184,10 +185,8 @@ export default function HomeTab() {
             <p>To edit your team name, manager, or delete your team, click the <i className='fa-solid fa-pen-to-square'></i> icon</p>
           </div>
         </div>
-        <div className="quick-add">
-          <h2>Quick-Add</h2>
-        </div>
-        
+
+        <QuickAdd />
       </div>
       <YourTeam managers={managers}/>           
     </>
