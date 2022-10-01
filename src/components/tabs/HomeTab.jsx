@@ -26,6 +26,7 @@ export default function HomeTab() {
     teamName: `${localStorage.getItem("teamName")}`,
     name: `${localStorage.getItem("managerName")}`,
     lead: true,
+    role: `Manager`,
     number:"(425) 422-3459",
     email:"queefin.qweet@seahawks.net",
     timeZone: 7
@@ -34,6 +35,7 @@ export default function HomeTab() {
     teamName: `${localStorage.getItem("teamName")}`,
     name: `Kid Rock's Cousin`,
     lead: undefined,
+    role: `Manager`,
     number:"(425) 993-2304",
     email:"walmart.krock@seahawks.net",
     timeZone: 7
