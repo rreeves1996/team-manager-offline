@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import EmpCard from '../cards/EmpCard';
+
+import YourTeam from './home/YourTeam';
 
 export default function HomeTab() {
   const [roles, addRole] = useState([]);
@@ -7,58 +8,7 @@ export default function HomeTab() {
 
   const employeeCount = 5;
   const managerCount = 2;
-  const role1 = {
-    roleName: "Quarterback",
-    roleSalary: 5,
-    empCount: 2
-  }
-  const role2 = {
-    roleName: "Runningback",
-    roleSalary: 8000,
-    empCount: 2
-  }
-  const role3 = {
-    roleName: "Crowd Streaker",
-    roleSalary: 500000,
-    empCount: 1
-  }
-  const manager1 = {
-    teamName: `${localStorage.getItem("teamName")}`,
-    name: `${localStorage.getItem("managerName")}`,
-    lead: true,
-    role: `Manager`,
-    number:"(425) 422-3459",
-    email:"queefin.qweet@seahawks.net",
-    timeZone: 7
-  }
-  const manager2 = {
-    teamName: `${localStorage.getItem("teamName")}`,
-    name: `Kid Rock's Cousin`,
-    lead: undefined,
-    role: `Manager`,
-    number:"(425) 993-2304",
-    email:"walmart.krock@seahawks.net",
-    timeZone: 7
-  }
 
-  const handleAddRoles = (newRole) => addRole(roles => [...roles, newRole]);
-  const handleAddManagers = (newManager) => addManager(managers => [...managers, newManager]);
-
-  const addAllRoles = () => {
-    handleAddRoles(role1);
-    handleAddRoles(role2);
-    handleAddRoles(role3);
-    console.log(roles);
-  }
-  
-  const addAllManagers = () => {
-    handleAddManagers(manager1);
-    handleAddManagers(manager2);
-    console.log(managers);
-  }
-
-  
-  
   const origDate = new Date().toDateString();
   const dateArray = origDate.split(" ");
   const dateNum = dateArray[2].split("");
@@ -68,7 +18,6 @@ export default function HomeTab() {
     month: "",
     year: dateArray[3]
   }
-
   switch(dateArray[0]) {
     case "Mon":
       date.weekDay = "Monday";
@@ -150,10 +99,62 @@ export default function HomeTab() {
 
   }
 
+  const role1 = {
+    roleName: "Quarterback",
+    roleSalary: 5,
+    empCount: 2
+  }
+  const role2 = {
+    roleName: "Runningback",
+    roleSalary: 8000,
+    empCount: 2
+  }
+  const role3 = {
+    roleName: "Crowd Streaker",
+    roleSalary: 500000,
+    empCount: 1
+  }
+  const manager1 = {
+    teamName: `${localStorage.getItem("teamName")}`,
+    name: `${localStorage.getItem("managerName")}`,
+    id: 1,
+    lead: true,
+    role: `Manager`,
+    number:"(425) 422-3459",
+    email:"queefin.qweet@seahawks.net",
+    timeZone: 7
+  }
+  const manager2 = {
+    teamName: `${localStorage.getItem("teamName")}`,
+    name: `Kid Rock's Cousin`,
+    id: 2,
+    lead: undefined,
+    role: `Manager`,
+    number:"(425) 993-2304",
+    email:"walmart.krock@seahawks.net",
+    timeZone: 7
+  }
+
+  const addAllRoles = () => {
+    handleAddRoles(role1);
+    handleAddRoles(role2);
+    handleAddRoles(role3);
+    console.log(roles);
+  }
+  
+  const addAllManagers = () => {
+    handleAddManagers(manager1);
+    handleAddManagers(manager2);
+    console.log(managers);
+  }
+
   useEffect(() => {
     addAllRoles();
     addAllManagers();
   }, [])
+
+  const handleAddRoles = (newRole) => addRole(roles => [...roles, newRole]);
+  const handleAddManagers = (newManager) => addManager(managers => [...managers, newManager]);
 
   return (
     <>
@@ -186,22 +187,9 @@ export default function HomeTab() {
         <div className="quick-add">
           <h2>Quick-Add</h2>
         </div>
+        
       </div>
-      <div className="your-team">
-        <h2>Your Team</h2>
-        <div className="card-body">
-          <div className="managers">
-            <h5><strong>Managers</strong></h5>
-            <div className="card-container">
-              {managers.map(manager => 
-                <>
-                  <EmpCard name={manager.name} role={manager.role} lead={manager.lead} number={manager.number} email={manager.email} timeZone={manager.timeZone}/>
-                </>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
+      <YourTeam managers={managers}/>           
     </>
   );
 }

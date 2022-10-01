@@ -1,6 +1,4 @@
-import React, { useState, useRef } from 'react';
-import { CSSTransition } from 'react-transition-group';
-import Banner from '../assets/banner.jpg';
+import React, { useState } from 'react';
 import HomeTab from './tabs/HomeTab';
 import ManageTab from './tabs/ManageTab';
 
