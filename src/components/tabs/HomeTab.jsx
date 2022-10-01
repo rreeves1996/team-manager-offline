@@ -195,7 +195,7 @@ export default function HomeTab() {
             <div className="card-container">
               {managers.map(manager => 
                 <>
-                  <EmpCard name={manager.name} lead={manager.lead} number={manager.number} email={manager.email} timeZone={manager.timeZone}/>
+                  <EmpCard name={manager.name} role={manager.role} lead={manager.lead} number={manager.number} email={manager.email} timeZone={manager.timeZone}/>
                 </>
               )}
             </div>
