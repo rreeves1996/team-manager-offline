@@ -96,29 +96,29 @@ export default function Summary(props) {
 
     return (
         <div className="summary">
-        <h2>Summary</h2>
-        <div className="summary-header">
-          <h6>Welcome to TeamEZ! Today is</h6>
-          <h5><strong>{date.weekDay}, {date.month} {date.day}, {date.year}</strong></h5>
-        </div>
-        <div className="divider"></div>
-        <div className="card-body">
-          <p>Your team currently has <strong>{managerCount}</strong> managers 
-          and <strong>{employeeCount}</strong> employees <span className='more-stats'>More stats <i className="fa-solid fa-caret-down"></i></span></p>
-          <div className="section">
-            <p><strong>Payroll Total: </strong> </p>
-            <p><strong>Avg. Salary:</strong> </p>
-            {props.roles.map(role => {
-              console.log(role.roleName);
-              return (
-                <p>
-                  <strong>Total {role.roleName}s:</strong> {role.empCount}
-                </p>
+            <h2>Summary</h2>
+            <div className="summary-header">
+                <h6>Welcome to TeamEZ! Today is</h6>
+                <h5><strong>{date.weekDay}, {date.month} {date.day}, {date.year}</strong></h5>
+            </div>
+            <div className="divider"></div>
+            <div className="card-body">
+                <p>Your team currently has <strong>{managerCount}</strong> managers 
+                and <strong>{employeeCount}</strong> employees <span className='more-stats'>More stats <i className="fa-solid fa-caret-down"></i></span></p>
+            <div className="section">
+                <p><strong>Payroll Total: </strong> </p>
+                <p><strong>Avg. Salary:</strong> </p>
+                {props.roles.map(role => {
+                console.log(role.roleName);
+                return (
+                    <p>
+                    <strong>Total {role.roleName}s:</strong> {role.empCount}
+                    </p>
 
-              )})}
-          </div>
-          <p>To edit your team name, manager, or delete your team, click the <i className='fa-solid fa-pen-to-square'></i> icon</p>
+                )})}
+            </div>
+                <p>To edit your team name, manager, or delete your team, click the <i className='fa-solid fa-pen-to-square'></i> icon</p>
+            </div>
         </div>
-      </div>
     )
 }
