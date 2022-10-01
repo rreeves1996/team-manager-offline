@@ -449,7 +449,7 @@ header i:active {
     font-size: 2rem;
     margin-right: 5px;
 }
-.quick-add, .your-team, .welcome {
+.quick-add, .your-team, .summary {
     background-color: rgb(231, 227, 227);
 
     border-top-left-radius: 8px;
@@ -466,7 +466,7 @@ header i:active {
     width: calc(35% - 16px);
     min-height: calc(100% - 0px) !important;
 }
-.welcome {
+.summary {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -475,7 +475,7 @@ header i:active {
 .your-team {
     width: 65%;
 }
-.quick-add h2, .your-team h2, .welcome h2 {
+.quick-add h2, .your-team h2, .summary h2 {
     text-align: center;
     text-transform: uppercase;
     font-weight: 900;
@@ -489,7 +489,7 @@ header i:active {
     letter-spacing: 1px;
     width: 100%;
 }
-.welcome h6 {
+.summary h6 {
     font-size: 1.05em;
 }
 h5 {
