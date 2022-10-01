@@ -9,17 +9,17 @@ export default function HomeTab({ nodeRef }) {
   const managerCount = 2;
   const role1 = {
     roleName: "Quarterback",
-    roleSalary: "5",
+    roleSalary: 5,
     empCount: 2
   }
   const role2 = {
     roleName: "Runningback",
-    roleSalary: "5",
+    roleSalary: 8000,
     empCount: 2
   }
   const role3 = {
     roleName: "Crowd Streaker",
-    roleSalary: "5",
+    roleSalary: 500000,
     empCount: 1
   }
   const manager1 = {
@@ -55,7 +55,8 @@ export default function HomeTab({ nodeRef }) {
     console.log(managers);
   }
 
-  console.log(roles);
+  
+  
   const origDate = new Date().toDateString();
   const dateArray = origDate.split(" ");
   const dateNum = dateArray[2].split("");
@@ -166,13 +167,13 @@ export default function HomeTab({ nodeRef }) {
             <p>Your team currently has <strong>{managerCount}</strong> managers 
             and <strong>{employeeCount}</strong> employees <span className='more-stats'>More stats <i className="fa-solid fa-caret-down"></i></span></p>
             <div className="section">
-              <p><strong>Payroll Total:</strong> </p>
+              <p><strong>Payroll Total: </strong> </p>
               <p><strong>Avg. Salary:</strong> </p>
-              {roles.forEach((role, index) =>{
+              {roles.map((role, index) =>{
                 console.log(role.roleName);
                 return (
                   <p>
-                    <strong>{role.roleName}</strong>
+                    <strong>Total {role.roleName}s:</strong> {role.empCount}
                   </p>
 
                 )})}
@@ -190,7 +191,7 @@ export default function HomeTab({ nodeRef }) {
           <div className="managers">
             <h5><strong>Managers</strong></h5>
             <div className="card-container">
-              {managers.forEach(manager => 
+              {managers.map(manager => 
                 <>
                   <EmpCard name={manager.name} lead={manager.lead} number={manager.number} email={manager.email} timeZone={manager.timeZone}/>
                 </>
