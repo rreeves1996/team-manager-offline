@@ -21,6 +21,7 @@
     border-radius: 6px;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
+    filter: drop-shadow(2px 3px 5px rgba(0, 0, 0, 0.404));
 }
 
 .emp-card-header, .emp-card-header-modal {
