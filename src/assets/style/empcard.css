@@ -6,13 +6,24 @@
     width: 250px;
     margin: 8px;
     filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.295));
-    transition: transform 0.2s;
+
     
 }
-.emp-card:hover {
-    transform: translateY(-2px);
+.modal-content {
+    background-color: transparent !important;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.emp-card-header {
+.emp-card-modal-container {
+    background-color: white;
+    border-radius: 6px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.emp-card-header, .emp-card-header-modal {
     display: flex;
     padding: 13px;
     align-items: center;
@@ -21,6 +32,17 @@
     color: white;
     border-radius: 6px;
     height: 100%;
+    transition: transform 0.2s,
+    background-color 0.2s;
+}
+.emp-card-header-modal {
+    border-radius: 0px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+.emp-card-header:hover {
+    transform: translateY(-2px);
+    background-color: #415f81;
 }
 .emp-picture {
     display: flex;
@@ -39,7 +61,7 @@
 .emp-info-header {
     margin: 0 8px;
 }
-.emp-card-header strong {
+.emp-info-header strong {
     font-family: 'Alumni Sans Pinstripe';
     font-size: 2.5em;
     text-transform: uppercase;
@@ -50,22 +72,45 @@
     text-underline-offset: 6px;
     
 }
+.emp-info-header p {
+    font-size: .75em !important;
+    opacity: 75%;
+}
 .emp-card h6 {
     margin: 0;
     margin-top: 4px;
     font-size: .8em;
 }
 .emp-contact-info {
+    color: var(--off-black);
     font-size: .85em;
-    padding: 8px 13px 3px 13px;
-}
-.emp-contact-info strong {
-    margin-left: -3px !important;
-    margin-bottom: 3px !important;
+    padding: 8px 13px;
 }
 .emp-contact-info p {
-    display: flex;
-    flex-direction: column;
-    margin-left: 3px !important;
-    margin-bottom: 8px !important;
+
+    margin: 8px 5px !important;
+}
+.emp-card-button-container{
+    padding: 5px 0;
+}
+.edit-button, .delete-button {
+    background-color: transparent;
+    border: 2px solid var(--blue);
+    color: var(--blue);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.089);
+    padding: 7px 10px;
+    margin: 0px 3px 0px 5px;
+    transition: all 0.2s;
+}
+.edit-button:hover, .delete-button:hover {
+    filter: none;
+    color: var(--off-white);
+    background-color: var(--blue);
+}
+.confirm {
+    color: rgb(209, 45, 45);
+    border: 2px solid rgb(209, 45, 45);
+}
+.confirm:hover {
+    background-color: rgb(209, 45, 45);
 }

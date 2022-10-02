@@ -18,7 +18,7 @@ export default function YourTeam(props) {
 
                         return (
                             <>
-                                <EmpCard key={manager.id} name={managerNameAbbreviated} role={manager.role} lead={manager.lead} number={manager.number} email={manager.email} timeZone={manager.timeZone}/>
+                                <EmpCard managers={props.managers} key={props.id} id={props.id} abbreviatedName={managerNameAbbreviated} name={manager.name} role={manager.role} lead={manager.lead} number={manager.number} email={manager.email} timeZone={manager.timeZone}/>
                             </>
                     )})}
                     </div>

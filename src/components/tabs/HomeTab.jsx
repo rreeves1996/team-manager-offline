@@ -58,6 +58,13 @@ export default function HomeTab() {
     console.log(managers);
   }
 
+  const deleteEmployee = (employee) => {
+    if(employee.role === "manager") {
+      let index = employee.id -1;
+      delete managers[index];
+    }
+  }
+
   useEffect(() => {
     addAllRoles();
     addAllManagers();
@@ -72,7 +79,7 @@ export default function HomeTab() {
         <Summary roles={roles}/>
         <QuickAdd />
       </div>
-      <YourTeam managers={managers}/>           
+      <YourTeam managers={managers} deleteEmployee={deleteEmployee}/>           
     </>
   );
 }
