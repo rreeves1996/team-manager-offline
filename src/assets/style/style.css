@@ -342,9 +342,12 @@ header h1 {
     text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.377);
 }
 .exit-button {
+    display: flex;  justify-content: center;    align-items: center;
     position: absolute;
-    right: 7px;
-    top: 4px;
+    right: 0;
+    top: 0;
+    width: 26px;
+    height: 26px;
     border: none;
 }
 header i, .exit-button {

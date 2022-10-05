@@ -55,14 +55,14 @@
     width: 100%;
     height: 100%;
     left: 0;
-    transition: opacity 200ms;
+    transition: opacity 300ms;
 }
 .emp-card-header:hover::before {
     
 
     opacity: 75%;
 
-    transition: opacity 200ms;
+    transition: opacity 300ms;
 
 }
 .emp-picture {
@@ -90,7 +90,7 @@
     line-height: 1;
     text-decoration: underline;
     text-decoration-thickness: 1px;
-    text-underline-offset: 6px;
+    text-underline-offset: 3px;
     
 }
 .emp-info-header p {
