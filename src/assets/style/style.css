@@ -329,9 +329,6 @@ footer {
     display: flex;
     z-index: 555;
 }
-.header-text, .menu-button {
-    z-index: 99999;
-}
 .menu-button {
     width: 10px;
     height: 10px;

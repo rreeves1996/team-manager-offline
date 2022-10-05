@@ -94,7 +94,7 @@ export default function Summary(props) {
     }
 
     const employeeCount = 5;
-    const managerCount = 2;
+
 
     return (
         <div className="summary">
@@ -105,7 +105,7 @@ export default function Summary(props) {
             </div>
             <div className="divider"></div>
             <div className="card-body">
-                <p>Your team currently has <strong>{managerCount}</strong> managers 
+                <p>Your team currently has <strong>{props.managers.length}</strong> managers 
                 and <strong>{employeeCount}</strong> employees <span className='more-stats-toggler' onClick={() => collapseStats(prevState => !prevState)}>More stats <i className={collapsed ? "fa-solid fa-caret-down" : "fa-solid fa-caret-down rotated"}></i></span></p>
                 <div className={collapsed ? 'more-stats collapsed' : 'more-stats'}>
                     <p><strong>Payroll Total: </strong> </p>
