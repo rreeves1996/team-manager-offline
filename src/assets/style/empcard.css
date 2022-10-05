@@ -35,6 +35,7 @@
     height: 100%;
     transition: transform 0.2s,
     background-color 0.2s;
+    /* overflow: hidden; */
 }
 .emp-card-header-modal {
     border-radius: 0px;
@@ -43,7 +44,26 @@
 }
 .emp-card-header:hover {
     transform: translateY(-2px);
-    background-color: #415f81;
+    background-color: #4d6b8d;
+}
+.emp-card-header::before {
+    position: absolute;
+    display: flex;  justify-content: center;    align-items: center;
+    content: url("../magnifying-glass-3-64.png");
+    opacity: 0%;
+
+    width: 100%;
+    height: 100%;
+    left: 0;
+    transition: opacity 200ms;
+}
+.emp-card-header:hover::before {
+    
+
+    opacity: 75%;
+
+    transition: opacity 200ms;
+
 }
 .emp-picture {
     display: flex;

@@ -6,6 +6,7 @@ import YourTeam from './home/YourTeam';
 export default function HomeTab() {
   const [roles, addRole] = useState([]);
   const [managers, addManager] = useState([]);
+  const [employees, addEmployee] = useState([]);
 
 
 
@@ -32,7 +33,8 @@ export default function HomeTab() {
     role: `Manager`,
     number:"(425) 422-3459",
     email:"queefin.qweet@seahawks.net",
-    timeZone: 7
+    timeZone: 7,
+    salary: 100000
   }
   const manager2 = {
     teamName: `${localStorage.getItem("teamName")}`,
@@ -42,7 +44,8 @@ export default function HomeTab() {
     role: `Manager`,
     number:"(425) 993-2304",
     email:"walmart.krock@seahawks.net",
-    timeZone: 7
+    timeZone: 7,
+    salary: 90000
   }
 
   const addAllRoles = () => {
@@ -67,14 +70,15 @@ export default function HomeTab() {
 
   const handleAddRoles = (newRole) => addRole(roles => [...roles, newRole]);
   const handleAddManagers = (newManager) => addManager(managers => [...managers, newManager]);
+  const handleAddEmployees = (newEmployee) => addEmployee(employees => [...employees, newEmployee]);
 
   return (
     <>
       <div className="col-home">
-        <Summary managers={managers} roles={roles}/>
-        <QuickAdd />
+        <Summary managers={managers} roles={roles} />
+        <QuickAdd handleAddEmployees={handleAddEmployees} />
       </div>
-      <YourTeam managers={managers}/>           
+      <YourTeam managers={managers} />           
     </>
   );
 }

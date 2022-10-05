@@ -52,6 +52,7 @@ export default function EmpCard(props) {
         }}
       >
         <div className="emp-card-modal-container">
+          <i className="fa-solid fa-xmark exit-button" onClick={() => handleClose()}></i>
           <div className="emp-card-header-modal">
             <div className="emp-picture">
               {props.picture ? (
